@@ -1,5 +1,7 @@
 # 404-to-Archive-Redirector
 
+Idea and credits go to: [Aayush](https://github.com/Divide-By-0/ideas-for-projects-people-would-use?tab=readme-ov-file#programming-tools)
+
 This is a Greasemonkey/ Tampermonkey script that will redirect you to the Wayback Machine, if you land on an unavailable 404 page.
 
 If no stored version is found in the Wayback Machine, nothing happens.
