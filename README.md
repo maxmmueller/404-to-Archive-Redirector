@@ -1,2 +1,18 @@
 # 404-to-Archive-Redirector
-Greasemonkey script that redirects from a 404 page to the Wayback Machine.
+
+This is a Greasemonkey/ Tampermonkey script that will redirect you to the Wayback Machine, if you land on an unavailable 404 page.
+
+If no stored version is found in the Wayback Machine, nothing happens.
+
+## Usage
+Create a new script in your Greasemonkey or Tampermonkey extension and simply paste the content of the [`404_to_Wayback.js`](404_to_Wayback.js) file into it.
+
+
+## Contributing
+Contributions to this project are welcome!
+
+If you encounter any problems, find a bug or have feature requests, please open an [issue](https://github.com/maxmmueller/404-to-Archive-Redirector/issues/new).
+
+
+## License
+Maximilian Müller 2024 [Apache License 2.0](LICENSE)
