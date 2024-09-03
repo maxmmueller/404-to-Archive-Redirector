@@ -1,20 +1,34 @@
-# 404-to-Archive-Redirector
+<div align="center">
+<!-- Icon -->
+<img src="https://raw.githubusercontent.com/maxmmueller/404-to-Archive-Redirector/main/source/icon/128.png">
 
-<p align="center">
+<!-- Header -->
+<h1>404-to-Archive-Redirector</h1>
+
+<!-- Download badge -->
 <a href="https://chromewebstore.google.com/detail/404-redirect/mdolkikeagjmhbdmajaaopjjpcklnelm">
 <img src="https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/HRs9MPufa1J1h5glNhut.png" alt="Add it to Chrome" height="40"></a>
-</p>
-
-Inspired by: [Aayush](https://github.com/Divide-By-0/ideas-for-projects-people-would-use?tab=readme-ov-file#programming-tools)
+<p></p>
+</div>
 
 This extension is your solution to 404 dead ends. It automatically redirects you to a saved version in the Wayback Machine for a seamless browsing experience.
 
-There's a standalone Chrome extension and a Greasemonkey script, that provide the same functionality.
+## Download
+Get it on the [Chrome Web Store](https://chromewebstore.google.com/detail/404-redirect/mdolkikeagjmhbdmajaaopjjpcklnelm)!
 
 
-## Greasemonkey/ Tampermonkey setup 
-Create a new script in your Greasemonkey or Tampermonkey extension and simply paste the content of the [`404_to_Wayback.js`](404_to_Wayback.js) file into it.
+## Load as unpacked extension
 
+If you are using a Chromium based browser without the Chrome Web Store you can add the extension by following these steps:
+
+1. Download the [latest Release](https://github.com/maxmmueller/404-to-Archive-Redirector/releases/latest) and extract it
+
+
+2. Navigate to the Extensions page of your browser (`chrome://extensions`)
+
+3. Enable Developer Mode with the toggle in the top right corner
+
+4. Click the "Load unpacked" button and select the `source` folder 
 
 ## Contributing
 Contributions to this project are welcome!
