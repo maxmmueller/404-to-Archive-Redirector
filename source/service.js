@@ -1,4 +1,19 @@
 
+function contentScriptAvailable(callback) {
+  try {
+    chrome.tabs.query({ active: true, currentWindow: true }, (activeTab) => {
+      const id = activeTab[0].id;
+
+      chrome.tabs.sendMessage(id, { mode: 'ping' }, () => {
+        callback(chrome.runtime.lastError == undefined);
+      });
+    });
+  }
+  catch (error) {
+    callback(false);
+  }
+}
+
 // gets executed when the icon is clicked
 chrome.action.onClicked.addListener(() => {
   chrome.tabs.query({ active: true, currentWindow: true }, (activeTab) => {
@@ -9,30 +24,37 @@ chrome.action.onClicked.addListener(() => {
   });
 });
 
-//isPageUnavailable
+
 async function isPageAvailable(url) {
   try {
-    const response = await fetch(url);
-    return response.ok && response.status != 404;
-  } catch (error) {
+    const response = await fetch(url, {
+      mode: 'no-cors'
+    });
+
+    return (response.ok && response.status != 404);
+  } 
+  catch (error) {
     return true;
   }
 }
 
-
-function handlePage(url, id) {
-  isPageAvailable(url)
-    .then(pageAvailable => {
-      if (!pageAvailable) {
-        chrome.tabs.sendMessage(id, { mode: 'automatic', url: url });
-      }
-    })
-}
-
+// gets executed when the url of a tab changes
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (!tab.url.startsWith("http")) return;
+  const url = tab.url;
 
-  if (changeInfo.status === 'complete') {
-    handlePage(tab.url, tabId);
-  }
+  if (!url.startsWith("http")) return;
+  if (changeInfo.status != 'complete') return;
+
+  isPageAvailable(url).then(pageAvailable => {
+    if (pageAvailable) return;
+
+    contentScriptAvailable((scriptAvailable) => {
+      if (!scriptAvailable) return;
+
+      // sends a trigger to the content script if a page is unavailable 
+      // and the content script available
+      chrome.tabs.sendMessage(tabId, { mode: 'automatic', url: url });
+    });
+
+  })
 });
