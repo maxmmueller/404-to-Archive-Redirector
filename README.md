@@ -7,9 +7,10 @@
 
 <!-- Download badge -->
 <a href="https://chromewebstore.google.com/detail/404-redirect/mdolkikeagjmhbdmajaaopjjpcklnelm">
-<img src="https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/HRs9MPufa1J1h5glNhut.png" alt="Add it to Chrome" height="40"></a>
+<img src="https://developer.chrome.com/static/docs/webstore/branding/image/206x58-chrome-web-bcb82d15b2486.png" alt="Add it to Chrome" height="40"></a>
 <p></p>
 </div>
+
 
 This extension is your solution to 404 dead ends. It automatically redirects you to a saved version in the Wayback Machine for a seamless browsing experience.
 
